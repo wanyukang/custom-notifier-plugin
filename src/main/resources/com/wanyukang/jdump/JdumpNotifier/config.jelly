@@ -1,0 +1,51 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <!--
+    This jelly script is used for per-project configuration.
+
+    See global.jelly for a general discussion about jelly script.
+  -->
+
+  <!--
+    Creates a text field that shows the value of the "name" property.
+    When submitted, it will be passed to the corresponding constructor parameter.
+  -->
+  <!--
+  <f:entry title="Name" field="name">
+    <f:textbox />
+  </f:entry>
+  -->
+
+  <f:entry title="报警方式" field="alarmWay">
+    <f:textbox />
+  </f:entry>
+
+  <f:entry title="报警邮件" field="alarmUserEmails">
+    <f:textbox />
+  </f:entry>
+
+  <f:entry title="报警电话" field="alarmUserPhones">
+    <f:textbox />
+  </f:entry>
+
+  <f:entry title="报警erp" field="alarmUserErps">
+    <f:textbox />
+  </f:entry>
+
+  <f:entry title="测试报告路径" field="testResultFile">
+    <f:textbox />
+  </f:entry>
+
+  <f:entry title="在启动构建时通知">
+    <f:checkbox name="onStart" value="true" checked="${instance.isOnStart()}"/>
+  </f:entry>
+
+  <f:entry title="构建成功时通知">
+    <f:checkbox name="onSuccess" value="true" checked="${instance.isOnSuccess()}"/>
+  </f:entry>
+
+  <f:entry title="构建失败时通知">
+    <f:checkbox name="onFailed" value="true" checked="${instance.isOnFailed()}"/>
+  </f:entry>
+
+</j:jelly>
